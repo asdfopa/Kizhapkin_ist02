@@ -1,0 +1,14 @@
+first_zarplata = 0.01
+dni = input('Сколько дней ты получал з/п?\n'
+            '')
+d = 1
+zarp = 0
+tabliza ={}
+while d <= int(dni):
+    zarp += first_zarplata
+    tabliza.update({d: first_zarplata})
+    first_zarplata = first_zarplata * 2
+    d += 1
+zarp = round(zarp,2)
+print('Дни: зарплата', tabliza)
+print(f'Зарплата до вычета налогов и удержаний: {zarp}')
