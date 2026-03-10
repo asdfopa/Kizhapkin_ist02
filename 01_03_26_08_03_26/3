@@ -3,7 +3,6 @@ id_otveta = 0
 count_of_prav = 0
 count_of_oshibka = 0
 nomera_nepraviln_otvetov = []
-plus = 1
 sdal = ''
 with open('C:\\Users\Ирина\Desktop\pythonPractice\otvet.txt', 'r',encoding='utf-8') as f:
     lines = f.readlines()
