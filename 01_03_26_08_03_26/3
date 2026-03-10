@@ -1,0 +1,32 @@
+otvet_ychenika = {}
+id_otveta = 0
+count_of_prav = 0
+count_of_oshibka = 0
+nomera_nepraviln_otvetov = []
+plus = 1
+sdal = ''
+with open('C:\\Users\Ирина\Desktop\pythonPractice\otvet.txt', 'r',encoding='utf-8') as f:
+    lines = f.readlines()
+    for i, line in enumerate(lines):
+        id_otveta += 1
+        otvet_ychenika.update({id_otveta: line.strip()})
+prav_Otvet = {1: 'A', 2: 'C', 3: 'A', 4: 'A', 5: 'D', 6: 'B', 7: 'C', 8: 'A', 9: 'C', 10: 'B', 11: 'A', 12: 'D', 13: 'C', 14: 'A', 15: 'D', 16: 'C', 17: 'B', 18: 'B', 19: 'D', 20: 'A'}
+
+for i in range(1, 21):
+    if i in otvet_ychenika:
+        if prav_Otvet[i] == otvet_ychenika[i]:
+            count_of_prav += 1
+        else:
+            count_of_oshibka += 1
+            nomera_nepraviln_otvetov.append(i)
+    else:
+        count_of_oshibka += 1
+        nomera_nepraviln_otvetov.append(i)
+if count_of_prav >= 15:
+    sdal = 'сдан'
+else: sdal = 'не сдан'
+
+print(f'Количество ошибок: {count_of_oshibka},\n'
+      f'Количество правильных ответов: {count_of_prav},\n'
+      f'Номера неправильных ответов: {nomera_nepraviln_otvetov},\n'
+      f'Экзамен {sdal}')
